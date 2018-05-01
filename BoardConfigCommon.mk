@@ -60,5 +60,8 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt8127
 TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Seccomp
+BOARD_SECCOMP_POLICY := $(COMMON_PATH)/seccomp
+
 # Inherit the proprietary files
 include vendor/amazon/mt8127-common/BoardConfigVendor.mk
