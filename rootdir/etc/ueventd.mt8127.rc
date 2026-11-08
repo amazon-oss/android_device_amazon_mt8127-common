@@ -3,5 +3,15 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Display
+/dev/MTK_SMI              0660   system     media
+/dev/ion                  0666   root       root
+/dev/mali                 0666   system     graphics
+/dev/mtk_disp             0660   system     graphics
+/dev/mtk_ovl              0440   system     system
+/dev/mtk_sched            0660   system     media
+/dev/mtkfb_vsync          0660   system     graphics
+/dev/sw_sync              0660   system     graphics
+
 # TEE
 /dev/trustzone            0660   system     drmrpc

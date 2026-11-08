@@ -5,6 +5,15 @@
 
 import /init.device.rc
 
+on init
+    # Display
+    mount debugfs none /sys/kernel/debug
+    chown system system /d/ion/heaps/ion_mm_heap
+    chown system media /proc/M4U_device
+    chmod 0644 /proc/M4U_device
+    chown system media /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
+    chmod 0664 /sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario
+
 on fs
     mount_all /fstab.mt8127
 
@@ -14,6 +23,16 @@ on post-fs-data
     start kisd
 
     setprop vold.post_fs_data_done 1
+
+# Display
+service pq /system/bin/pq
+    class main
+    user system
+    group system graphics
+    oneshot
+
+on property:init.svc.servicemanager=restarting
+    restart pq
 
 # TEE
 service kisd /system/bin/kisd

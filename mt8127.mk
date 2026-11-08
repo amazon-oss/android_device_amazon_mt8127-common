@@ -3,6 +3,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Display
+PRODUCT_PACKAGES += \
+    libion \
+    libstlport_shared
+
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.mt8127.rc:root/init.recovery.mt8127.rc
@@ -15,7 +20,8 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libamazonlog
+    libamazonlog \
+    libbinder_shim
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/amazon/mt8127-common/mt8127-common-vendor.mk)
