@@ -12,5 +12,13 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a7
 
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+
+# Platform
+BOARD_USES_MTK_HARDWARE := true
+TARGET_BOARD_PLATFORM := mt8127
+TARGET_BOARD_VENDOR := amazon
+
 # Inherit the proprietary files
 include vendor/amazon/mt8127-common/BoardConfigVendor.mk
