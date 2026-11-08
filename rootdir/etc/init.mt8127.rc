@@ -1,0 +1,12 @@
+#
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+
+import /init.device.rc
+
+on fs
+    mount_all /fstab.mt8127
+
+on post-fs-data
+    setprop vold.post_fs_data_done 1
