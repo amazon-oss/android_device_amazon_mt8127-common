@@ -19,6 +19,16 @@ PRODUCT_PACKAGES += \
     libion \
     libstlport_shared
 
+# Media
+PRODUCT_PACKAGES += \
+    libgui_ext \
+    libui_ext
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.mt8127.rc:root/init.recovery.mt8127.rc
@@ -32,7 +42,8 @@ PRODUCT_COPY_FILES += \
 # Shims
 PRODUCT_PACKAGES += \
     libamazonlog \
-    libbinder_shim
+    libbinder_shim \
+    libui_shim
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/amazon/mt8127-common/mt8127-common-vendor.mk)

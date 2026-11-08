@@ -41,6 +41,14 @@ service pq /system/bin/pq
 on property:init.svc.servicemanager=restarting
     restart pq
 
+# Media
+service mediacodec /system/bin/mediacodec
+    class main
+    user mediacodec
+    group camera drmrpc mediadrm audio media
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks
+
 # NVRAM
 service NvRAMAgent /system/bin/nvram_agent_binder
     user system

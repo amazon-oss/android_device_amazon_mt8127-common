@@ -16,5 +16,10 @@
 /dev/mtkfb_vsync          0660   system     graphics
 /dev/sw_sync              0660   system     graphics
 
+# Media
+/dev/Vcodec               0660   media      media
+/dev/devmap               0444   root       media
+/dev/mtk_jpeg             0440   system     camera
+
 # TEE
 /dev/trustzone            0660   system     drmrpc

@@ -22,6 +22,21 @@ lib/hw/memtrack.mt8127.so
 lib/libion_mtk.so
 lib/libm4u.so
 
+# Media
+lib/libGdmaScalerPipe.so
+lib/libJpgDecPipe.so
+lib/libSwJpgCodec.so
+lib/libaed.so
+lib/libmhalImageCodec.so
+lib/libmmprofile.so
+lib/libmp2dec_sb.ca7.so
+lib/libmp4enc_sa.ca7.so
+lib/libmtkjpeg.so
+lib/libstagefrighthw.so
+lib/libvc1dec_sa.ca7.so
+lib/libvp8dec_sa.ca7.so
+lib/libvp9dec_sa.ca7.so
+
 # NVRAM
 bin/nvram_daemon
 lib/libfile_op.so
