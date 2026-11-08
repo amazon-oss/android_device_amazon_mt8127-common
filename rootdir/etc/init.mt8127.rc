@@ -9,4 +9,20 @@ on fs
     mount_all /fstab.mt8127
 
 on post-fs-data
+    # TEE
+    mkdir /data/key_provisioning 0770 system system
+    start kisd
+
     setprop vold.post_fs_data_done 1
+
+# TEE
+service kisd /system/bin/kisd
+
+service rpmb_svc /system/bin/rpmb_svc
+    class main
+    user root
+    group root
+    disabled
+
+on property:ro.boot.rpmb_state=1
+    start rpmb_svc
