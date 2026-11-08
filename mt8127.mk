@@ -3,6 +3,17 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    libtinycompress \
+    libtinyxml
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
+
 # Display
 PRODUCT_PACKAGES += \
     libion \

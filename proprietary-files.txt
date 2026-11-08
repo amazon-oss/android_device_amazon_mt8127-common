@@ -1,5 +1,18 @@
 # Unpinned blobs from full_tank-user 5.1.1 LVY48F 288.6.8.8_user_688806320 release-keys
 
+# Audio
+lib/libaudiocompensationfilter.so
+lib/libaudiocustparam.so
+lib/libaudiodcrflt.so
+lib/libaudiosetting.so
+lib/libbessound_mtk.so
+lib/libblisrc.so
+lib/libblisrc32.so
+lib/libcvsd_mtk.so
+lib/libmsbc_mtk.so
+lib/libmtklimiter.so
+lib/libmtkshifter.so
+
 # Display
 bin/pq
 lib/egl/libEGL_mali.so

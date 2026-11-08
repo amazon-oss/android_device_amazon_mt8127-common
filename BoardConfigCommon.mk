@@ -12,6 +12,9 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a7
 
+# Audio
+TARGET_TINY_ALSA_IGNORE_SILENCE_SIZE := true
+
 # Boot Image
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
