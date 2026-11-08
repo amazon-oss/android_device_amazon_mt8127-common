@@ -63,5 +63,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Seccomp
 BOARD_SECCOMP_POLICY := $(COMMON_PATH)/seccomp
 
+# Wi-Fi
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
 # Inherit the proprietary files
 include vendor/amazon/mt8127-common/BoardConfigVendor.mk

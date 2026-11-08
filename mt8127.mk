@@ -45,5 +45,14 @@ PRODUCT_PACKAGES += \
     libbinder_shim \
     libui_shim
 
+# Wi-Fi
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
+
+PRODUCT_PACKAGES += \
+    hostapd \
+    wpa_supplicant
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/amazon/mt8127-common/mt8127-common-vendor.mk)
