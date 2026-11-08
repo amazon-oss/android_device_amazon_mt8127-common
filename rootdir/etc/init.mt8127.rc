@@ -17,6 +17,10 @@ on init
 on fs
     mount_all /fstab.mt8127
 
+    # ZRAM
+    write /proc/sys/vm/page-cluster 0
+    swapon_all /vendor/etc/fstab.enableswap
+
 on post-fs-data
     # NVRAM
     mkdir /data/nvram 2771 root system
