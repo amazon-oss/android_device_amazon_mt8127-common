@@ -29,6 +29,9 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_amazon
+
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_CONFIG := mt8127_defconfig
