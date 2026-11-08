@@ -18,11 +18,18 @@ on fs
     mount_all /fstab.mt8127
 
 on post-fs-data
+    # NVRAM
+    mkdir /data/nvram 2771 root system
+
     # TEE
     mkdir /data/key_provisioning 0770 system system
     start kisd
 
     setprop vold.post_fs_data_done 1
+
+on boot
+    # NVRAM
+    start NvRAMAgent
 
 # Display
 service pq /system/bin/pq
@@ -33,6 +40,20 @@ service pq /system/bin/pq
 
 on property:init.svc.servicemanager=restarting
     restart pq
+
+# NVRAM
+service NvRAMAgent /system/bin/nvram_agent_binder
+    user system
+    group system
+
+service nvram_daemon /system/bin/nvram_daemon
+    class main
+    user root
+    group system bluetooth
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+    start nvram_daemon
 
 # TEE
 service kisd /system/bin/kisd

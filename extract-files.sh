@@ -52,6 +52,14 @@ if [ -z "${SRC}" ]; then
     SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+        lib/libnvramagentclient.so)
+            add_needed libbinder_shim.so "${2}"
+            ;;
+    esac
+}
+
 function add_needed() {
     patchelf --print-needed "${2}" | grep -qx "${1}" || patchelf --add-needed "${1}" "${2}"
 }
