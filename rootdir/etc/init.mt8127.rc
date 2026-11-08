@@ -75,6 +75,12 @@ service rpmb_svc /system/bin/rpmb_svc
 on property:ro.boot.rpmb_state=1
     start rpmb_svc
 
+# Thermal
+service thermal_manager /system/bin/thermal_manager
+    class main
+    user root
+    oneshot
+
 # Wi-Fi
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \

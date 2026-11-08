@@ -50,3 +50,7 @@ lib/libnvramagentclient.so
 # TEE
 bin/rpmb_svc
 lib/libtz_uree.so
+
+# Thermal
+bin/thermal_manager
+etc/.tp/thermal.conf
