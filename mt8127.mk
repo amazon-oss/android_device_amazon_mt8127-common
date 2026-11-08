@@ -12,5 +12,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt8127:root/fstab.mt8127 \
     $(LOCAL_PATH)/rootdir/etc/init.mt8127.rc:root/init.mt8127.rc
 
+# Shims
+PRODUCT_PACKAGES += \
+    libamazonlog
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/amazon/mt8127-common/mt8127-common-vendor.mk)
