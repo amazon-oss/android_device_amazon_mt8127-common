@@ -45,6 +45,7 @@ TARGET_BOARD_VENDOR := amazon
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.mt8127
+TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 
 # Inherit the proprietary files
 include vendor/amazon/mt8127-common/BoardConfigVendor.mk
