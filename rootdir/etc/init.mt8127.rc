@@ -39,6 +39,11 @@ on boot
     # NVRAM
     start NvRAMAgent
 
+    # USB
+    write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
+    write /sys/class/android_usb/android0/iProduct ${ro.product.model}
+    write /sys/class/android_usb/android0/iSerial ${ro.serialno}
+
 on property:sys.boot_completed=1
     # Boot profiling
     write /proc/bootprof 0
