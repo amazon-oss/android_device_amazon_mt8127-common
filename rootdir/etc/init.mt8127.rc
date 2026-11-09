@@ -39,6 +39,10 @@ on boot
     # NVRAM
     start NvRAMAgent
 
+on property:sys.boot_completed=1
+    # Boot profiling
+    write /proc/bootprof 0
+
 # Display
 service pq /system/bin/pq
     class main
