@@ -32,6 +32,10 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
+    # Memory
+    write /proc/sys/vm/dirty_writeback_centisecs 300
+    write /proc/sys/vm/min_free_kbytes 16384
+
     # NVRAM
     start NvRAMAgent
 
